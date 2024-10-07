@@ -1,0 +1,56 @@
+<div class="listado-container">
+    <app-seccion></app-seccion>
+  
+    <h2>Listado de Pacientes</h2>
+  
+   
+    <table class="table-pacientes">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Primer Apellido</th>
+          <th>Segundo Apellido</th>
+          <th>Edad</th>
+          <th>Género</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let paciente of pacientes" (click)="verMas(paciente)">
+          <td>{{ paciente.nombre }}</td>
+          <td>{{ paciente.primerApellido }}</td>
+          <td>{{ paciente.segundoApellido }}</td>
+          <td>{{ paciente.edad }}</td>
+          <td>{{ paciente.genero }}</td>
+          <td>
+            <button class="btn-ver-mas" (click)="verMas(paciente)">Ver Más</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+
+    <div *ngIf="pacienteSeleccionado" class="detalle-paciente">
+      <h3>Detalles del Paciente</h3>
+      <p><strong>Nombre:</strong> {{ pacienteSeleccionado.nombre }}</p>
+      <p><strong>Primer Apellido:</strong> {{ pacienteSeleccionado.primerApellido }}</p>
+      <p><strong>Segundo Apellido:</strong> {{ pacienteSeleccionado.segundoApellido }}</p>
+      <p><strong>Estado Civil:</strong> {{ pacienteSeleccionado.estadoCivil }}</p>
+      <p><strong>Fecha de Nacimiento:</strong> {{ pacienteSeleccionado.fechaNacimiento }}</p>
+      <p><strong>Edad:</strong> {{ pacienteSeleccionado.edad }}</p>
+      <p><strong>Grupo Sanguíneo:</strong> {{ pacienteSeleccionado.grupoSanguineo }}</p>
+      <p><strong>DNI:</strong> {{ pacienteSeleccionado.dni }}</p>
+      <p><strong>Número de Historia Clínica:</strong> {{ pacienteSeleccionado.numHistoriaClinica }}</p>
+      <p><strong>Móvil:</strong> {{ pacienteSeleccionado.movil }}</p>
+      <p><strong>Email:</strong> {{ pacienteSeleccionado.email }}</p>
+      <p><strong>Aseguradora:</strong> {{ pacienteSeleccionado.aseguradora }}</p>
+      <p><strong>Número de Tarjeta:</strong> {{ pacienteSeleccionado.numTarjeta }}</p>
+      <p><strong>Dirección:</strong> {{ pacienteSeleccionado.direccion }}</p>
+      <p><strong>Localidad:</strong> {{ pacienteSeleccionado.localidad }}</p>
+      <p><strong>Provincia:</strong> {{ pacienteSeleccionado.provincia }}</p>
+      <p><strong>Código Postal:</strong> {{ pacienteSeleccionado.codigoPostal }}</p>
+  
+      <button (click)="cerrar()">Cerrar</button>
+    </div>
+  </div>
+  

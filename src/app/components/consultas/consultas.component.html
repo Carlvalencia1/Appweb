@@ -1,0 +1,82 @@
+<div class="consultas-container">
+  <app-seccion></app-seccion>
+  
+  <div class="header">
+    <label for="pacienteSeleccionado">Seleccionar Paciente:</label>
+    <select id="pacienteSeleccionado" [(ngModel)]="pacienteSeleccionado" (change)="actualizarNombreCompleto()">
+      <option *ngFor="let paciente of pacientes" [ngValue]="paciente">{{ paciente.nombreCompleto }}</option>
+    </select>
+    <h2>{{ pacienteSeleccionado?.nombreCompleto }}</h2>
+    <button (click)="guardarConsulta()" class="btn-guardar">Guardar</button>
+  </div>
+
+  <div class="consulta-form">
+    <label for="fechaConsulta">Fecha Consulta</label>
+    <input type="date" id="fechaConsulta" [(ngModel)]="fechaConsulta" />
+
+    <label for="profesional">Profesional</label>
+    <select id="profesional" [(ngModel)]="profesionalSeleccionado">
+      <option *ngFor="let profesional of profesionales" [value]="profesional">{{ profesional }}</option>
+    </select>
+
+    <div class="tabs-section">
+      <button class="tab" [class.active]="tabActivo === 'Anamnesis'" (click)="cambiarTab('Anamnesis')">Anamnesis</button>
+      <button class="tab" [class.active]="tabActivo === 'Exploración'" (click)="cambiarTab('Exploración')">Exploración</button>
+      <button class="tab" [class.active]="tabActivo === 'Diagnóstico'" (click)="cambiarTab('Diagnóstico')">Diagnóstico</button>
+      <button class="tab" [class.active]="tabActivo === 'Tratamiento'" (click)="cambiarTab('Tratamiento')">Tratamiento</button>
+      <button class="tab" [class.active]="tabActivo === 'Observaciones'" (click)="cambiarTab('Observaciones')">Observaciones</button>
+    </div>
+
+    <div class="textarea-container" *ngIf="tabActivo === 'Anamnesis'">
+      <textarea [(ngModel)]="anamneseTexto" placeholder="Escriba aquí la anamnesis..."></textarea>
+    </div>
+    <div class="textarea-container" *ngIf="tabActivo === 'Exploración'">
+      <textarea [(ngModel)]="exploracionTexto" placeholder="Escriba aquí la exploración..."></textarea>
+    </div>
+    <div class="textarea-container" *ngIf="tabActivo === 'Diagnóstico'">
+      <textarea [(ngModel)]="diagnosticoTexto" placeholder="Escriba aquí el diagnóstico..."></textarea>
+    </div>
+    <div class="textarea-container" *ngIf="tabActivo === 'Tratamiento'">
+      <textarea [(ngModel)]="tratamientoTexto" placeholder="Escriba aquí el tratamiento..."></textarea>
+    </div>
+    <div class="textarea-container" *ngIf="tabActivo === 'Observaciones'">
+      <textarea [(ngModel)]="observacionesTexto" placeholder="Escriba aquí las observaciones..."></textarea>
+    </div>
+  </div>
+
+  <div class="historico-consultas">
+    <h3>Histórico Consultas</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Anamnesis</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let consulta of historicoConsultas">
+          <td>{{ consulta.fecha }}</td>
+          <td>{{ consulta.anamnesis }}</td>
+          <td>
+            <button (click)="verMas(consulta)">Ver más</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="consultaSeleccionada">
+    <h3>Detalles de la Consulta</h3>
+    <p><strong>Fecha:</strong> {{ consultaSeleccionada.fecha }}</p>
+    <p><strong>Profesional:</strong> {{ consultaSeleccionada.profesional }}</p>
+    <p><strong>Anamnesis:</strong> {{ consultaSeleccionada.anamnesis }}</p>
+    <p><strong>Exploración:</strong> {{ consultaSeleccionada.exploracion }}</p>
+    <p><strong>Diagnóstico:</strong> {{ consultaSeleccionada.diagnostico }}</p>
+    <p><strong>Tratamiento:</strong> {{ consultaSeleccionada.tratamiento }}</p>
+    <p><strong>Observaciones:</strong> {{ consultaSeleccionada.observaciones }}</p>
+    
+    <button (click)="cerrarDetalles()" class="btn-cerrar">Cerrar</button>
+    <button (click)="generarPDF(consultaSeleccionada)" class="btn-generar-pdf">Generar PDF</button> <!-- Nuevo botón -->
+  </div>
+</div>

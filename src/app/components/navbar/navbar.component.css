@@ -1,0 +1,18 @@
+.navbar {
+    background-color: #003366; /* Fondo azul */
+    padding: 1rem;
+  }
+  
+  .navbar-link {
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  
+  .navbar-link:hover {
+    text-decoration: underline;
+  }
+  
+  
+  

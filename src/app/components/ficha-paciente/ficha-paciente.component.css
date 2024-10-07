@@ -1,0 +1,103 @@
+.ficha-paciente-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-datos {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Espacio entre secciones */
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas si es necesario */
+  gap: 40px; /* Espacio entre cada campo */
+}
+
+.form-group {
+  flex: 1 1 calc(20% - 15px); /* Cada campo ocupa el 25% del ancho, menos el espacio */
+  min-width: 200px; /* Ancho mínimo para los campos */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 10px; /* Espacio entre las opciones de radio */
+}
+
+.tabs-section {
+  display: flex;
+  margin-top: 20px;
+}
+
+.tab {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.tab:hover {
+  background-color: #eaeaea;
+}
+
+.tab.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.foto-paciente {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.foto-paciente img {
+  width: 60px; 
+  height: auto;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.btn-borrar-foto {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-borrar-foto:hover {
+  background-color: #c82333;
+}
+
+.btn-agregar-foto {
+  padding: 5px 10px;
+  background-color: #4baa14;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,102 @@
+.consultas-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn-guardar {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.consulta-form {
+  margin-bottom: 20px;
+}
+
+.tabs-section {
+  display: flex;
+  margin: 10px 0;
+}
+
+.tab {
+  margin-right: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tab.active {
+  font-weight: bold;
+  background-color: #007bff; /* Ajusta el color según tu diseño */
+  color: white;
+}
+
+.textarea-container {
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.historico-consultas {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.btn-generar-pdf {
+  margin-left: 10px; /* Espacio entre botones */
+  background-color: #007bff; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 8px 12px; /* Relleno */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar cursor */
+}
+
+.btn-generar-pdf:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el ratón */
+}
+
+.btn-cerrar {
+  margin-left: 10px; /* Espacio entre botones */
+  background-color: #dc3545; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 8px 12px; /* Relleno */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar cursor */
+}
+
+.btn-cerrar:hover {
+  background-color: #c82333; /* Color de fondo al pasar el ratón */
+}

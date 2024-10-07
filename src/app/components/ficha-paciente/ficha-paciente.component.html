@@ -1,0 +1,154 @@
+<div class="ficha-paciente-container">
+  <app-seccion></app-seccion>
+  
+
+  <div class="formulario-datos">
+    <div class="form-row">
+      <div class="form-group">
+        <label>Género</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="genero" value="Hombre" [(ngModel)]="genero" checked> Hombre
+          </label>
+          <label>
+            <input type="radio" name="genero" value="Mujer" [(ngModel)]="genero"> Mujer
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Estado</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="estado" value="Alta" [(ngModel)]="estado" checked> Alta
+          </label>
+          <label>
+            <input type="radio" name="estado" value="Baja" [(ngModel)]="estado"> Baja
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Primer Apellido</label>
+        <input type="text" [(ngModel)]="primerApellido" placeholder="Fernández">
+      </div>
+
+      <div class="form-group">
+        <label>Segundo Apellido</label>
+        <input type="text" [(ngModel)]="segundoApellido" placeholder="De Flores">
+      </div>
+
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" [(ngModel)]="nombre" placeholder="Dionio">
+      </div>
+
+      <div class="form-group">
+        <label>Estado Civil</label>
+        <input type="text" [(ngModel)]="estadoCivil" placeholder="Divorciado/a">
+      </div>
+
+      <div class="form-group">
+        <label>Nacimiento</label>
+        <input type="date" [(ngModel)]="fechaNacimiento">
+      </div>
+
+      <div class="form-group">
+        <label>Edad</label>
+        <input type="number" [(ngModel)]="edad" placeholder="51">
+      </div>
+
+      <div class="form-group">
+        <label>Gr. Sanguíneo</label>
+        <input type="text" [(ngModel)]="grupoSanguineo" placeholder="O+">
+      </div>
+
+      <div class="form-group">
+        <label>DNI / NIF</label>
+        <input type="text" [(ngModel)]="dni" placeholder="14253698XJKY">
+      </div>
+
+      <div class="form-group">
+        <label>Num. Hist. Clínica</label>
+        <input type="text" [(ngModel)]="numHistoriaClinica" placeholder="PABLITO11">
+      </div>
+
+      <div class="form-group">
+        <label>Móvil / Celular</label>
+        <input type="text" [(ngModel)]="movil" placeholder="656889977">
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" [(ngModel)]="email" placeholder="example@example.com">
+      </div>
+
+      <div class="form-group">
+        <label>Aseguradora</label>
+        <select [(ngModel)]="aseguradora">
+          <option>DKV</option>
+          <option>Otra Aseguradora</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Num. de Tarjeta</label>
+        <input type="text" [(ngModel)]="numTarjeta" placeholder="NTJ78779999WW">
+      </div>
+
+      <div class="form-group">
+        <label>Dirección</label>
+        <input type="text" [(ngModel)]="direccion" placeholder="CAMINO DE LA HUERTA 43">
+      </div>
+
+      <div class="form-group">
+        <label>Localidad</label>
+        <input type="text" [(ngModel)]="localidad" placeholder="Huetor Vega">
+      </div>
+
+      <div class="form-group">
+        <label>Provincia</label>
+        <input type="text" [(ngModel)]="provincia" placeholder="Granada">
+      </div>
+
+      <div class="form-group">
+        <label>Código Postal</label>
+        <input type="text" [(ngModel)]="codigoPostal" placeholder="18456">
+      </div>
+    </div>
+  </div>
+
+ 
+  <button class="btn-guardar" (click)="guardarPaciente()">Guardar</button>
+
+
+  <div class="tabs-section">
+    <button class="tab" [class.active]="tabActivo === 'Foto'" (click)="cambiarTab('Foto')">Foto</button>
+    <button class="tab" [class.active]="tabActivo === 'Observaciones'" (click)="cambiarTab('Observaciones')">Observaciones</button>
+    <button class="tab" [class.active]="tabActivo === 'AntPersonales'" (click)="cambiarTab('AntPersonales')">Ant. Personales</button>
+    <button class="tab" [class.active]="tabActivo === 'AntFamiliares'" (click)="cambiarTab('AntFamiliares')">Ant. Familiares</button>
+  </div>
+
+
+  <div class="seccion-contenido">
+    <div *ngIf="tabActivo === 'Foto'">
+      <div class="foto-paciente">
+        <img [src]="foto" alt="Foto del Paciente">
+        <button class="btn-borrar-foto" (click)="borrarFoto()">Borrar Foto</button>
+      </div>
+    </div>
+
+    <div *ngIf="tabActivo === 'Observaciones'">
+      <p>Observaciones del paciente...</p>
+    </div>
+
+    <div *ngIf="tabActivo === 'AntPersonales'">
+      <p>Antecedentes personales del paciente...</p>
+    </div>
+
+    <div *ngIf="tabActivo === 'AntFamiliares'">
+      <p>Antecedentes familiares del paciente...</p>
+    </div>
+  </div>
+
+  

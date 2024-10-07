@@ -1,0 +1,23 @@
+.barra-opciones {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .opcion-btn {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .opcion-btn:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .opcion-btn.activo {
+    background-color: #007bff;
+    color: white;
+  }
+  

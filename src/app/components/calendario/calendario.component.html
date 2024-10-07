@@ -1,0 +1,40 @@
+<div class="calendario-container">
+  <div class="calendario-header">
+    <button (click)="cambiarSemana(-1)">Anterior</button>
+    <h2>Semana {{ semanaActual }}</h2>
+    <button (click)="cambiarSemana(1)">Siguiente</button>
+  </div>
+
+  <div class="calendario-body">
+    <div class="dia" *ngFor="let dia of diasSemana; let i = index">
+      <h3>{{ dia }}</h3>
+      <div class="cita" *ngFor="let cita of citas" 
+        [ngClass]="{'sala2': cita.sala === 'Sala 2', 'sala3': cita.sala === 'Sala 3', 'sala5': cita.sala === 'Sala 5'}" 
+        (click)="verInformacionCita(cita)">
+        <p>{{ cita.nombre }} <br> {{ cita.hora }} - {{ cita.profesional }} <br> {{ cita.sala }}</p>
+        <button class="editar-btn" (click)="editarCita(cita)">✏️</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulario para editar la cita seleccionada -->
+  <div *ngIf="citaSeleccionada" class="formulario-edicion">
+    <h3>Editar Cita</h3>
+    <label>Paciente:</label>
+    <select [(ngModel)]="pacienteSeleccionado">
+      <option *ngFor="let paciente of pacientes" [value]="paciente.nombre">{{ paciente.nombre }}</option>
+    </select>
+
+    <label>Medico:</label>
+    <input type="text" [(ngModel)]="medicoSeleccionado" placeholder="Nombre del médico">
+
+    <label>Sala:</label>
+    <select [(ngModel)]="salaSeleccionada">
+      <option value="Sala 2">Sala 2</option>
+      <option value="Sala 3">Sala 3</option>
+      <option value="Sala 5">Sala 5</option>
+    </select>
+
+    <button class="guardar-btn" (click)="guardarCambios()">Guardar</button>
+  </div>
+</div>

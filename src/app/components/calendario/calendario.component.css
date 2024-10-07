@@ -1,7 +1,8 @@
 .calendario-container {
+  font-family: "Playfair Display", serif;
   width: 100%;
   margin: 20px auto;
-  background-color: #f9f9f9;
+  background-color : #8af5b8; 
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 8px;

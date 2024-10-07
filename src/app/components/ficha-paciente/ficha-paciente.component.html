@@ -1,6 +1,5 @@
 <div class="ficha-paciente-container">
   <app-seccion></app-seccion>
-  
 
   <div class="formulario-datos">
     <div class="form-row">
@@ -118,10 +117,10 @@
     </div>
   </div>
 
+
+  <button class="btn btn-success" (click)="guardarPaciente()">Guardar</button>
+
  
-  <button class="btn-guardar" (click)="guardarPaciente()">Guardar</button>
-
-
   <div class="tabs-section">
     <button class="tab" [class.active]="tabActivo === 'Foto'" (click)="cambiarTab('Foto')">Foto</button>
     <button class="tab" [class.active]="tabActivo === 'Observaciones'" (click)="cambiarTab('Observaciones')">Observaciones</button>
@@ -134,7 +133,7 @@
     <div *ngIf="tabActivo === 'Foto'">
       <div class="foto-paciente">
         <img [src]="foto" alt="Foto del Paciente">
-        <button class="btn-borrar-foto" (click)="borrarFoto()">Borrar Foto</button>
+        <button class="btn btn-danger btn-borrar-foto" (click)="borrarFoto()">Borrar Foto</button>
       </div>
     </div>
 
@@ -150,5 +149,4 @@
       <p>Antecedentes familiares del paciente...</p>
     </div>
   </div>
-
-  
+</div>

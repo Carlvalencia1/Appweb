@@ -1,9 +1,16 @@
+
+
+
 .consultas-container {
   display: flex;
   flex-direction: column;
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
+  background-color : #e0faeb; 
+  color: #333; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .header {
@@ -12,6 +19,52 @@
   align-items: center;
   margin-bottom: 20px;
 }
+
+
+button, .btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+button:hover, .btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); 
+}
+
+button.btn-secondary, .btn-secondary {
+  background-color: #6c757d; 
+}
+
+button.btn-secondary:hover, .btn-secondary:hover {
+  background-color: #565e64; 
+}
+
+
+button.btn-danger, .btn-danger {
+  background-color: #dc3545; 
+}
+
+button.btn-danger:hover, .btn-danger:hover {
+  background-color: #c82333; 
+}
+
+
+button.btn-success, .btn-success {
+  background-color: #28a745; 
+}
+
+button.btn-success:hover, .btn-success:hover {
+  background-color: #218838; 
+}
+
 
 .btn-guardar {
   background-color: #007bff;
@@ -38,7 +91,7 @@
 
 .tab.active {
   font-weight: bold;
-  background-color: #007bff; /* Ajusta el color según tu diseño */
+  background-color: #007bff; 
   color: white;
 }
 
@@ -74,29 +127,29 @@ th {
 }
 
 .btn-generar-pdf {
-  margin-left: 10px; /* Espacio entre botones */
-  background-color: #007bff; /* Color de fondo */
-  color: white; /* Color del texto */
-  border: none; /* Sin borde */
-  padding: 8px 12px; /* Relleno */
-  border-radius: 4px; /* Bordes redondeados */
-  cursor: pointer; /* Cambiar cursor */
+  margin-left: 10px; 
+  background-color: #007bff; 
+  color: white; 
+  border: none; 
+  padding: 8px 12px; 
+  border-radius: 4px; 
+  cursor: pointer; 
 }
 
 .btn-generar-pdf:hover {
-  background-color: #0056b3; /* Color de fondo al pasar el ratón */
+  background-color: #0056b3;
 }
 
 .btn-cerrar {
-  margin-left: 10px; /* Espacio entre botones */
-  background-color: #dc3545; /* Color de fondo */
-  color: white; /* Color del texto */
-  border: none; /* Sin borde */
-  padding: 8px 12px; /* Relleno */
-  border-radius: 4px; /* Bordes redondeados */
-  cursor: pointer; /* Cambiar cursor */
+  margin-left: 10px; 
+  background-color: #dc3545;
+  color: white; 
+  border: none; 
+  padding: 8px 12px; 
+  border-radius: 4px; 
+  cursor: pointer; 
 }
 
 .btn-cerrar:hover {
-  background-color: #c82333; /* Color de fondo al pasar el ratón */
+  background-color: #c82333; 
 }

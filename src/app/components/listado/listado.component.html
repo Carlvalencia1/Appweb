@@ -1,36 +1,33 @@
 <div class="listado-container">
-    <app-seccion></app-seccion>
-  
-    <h2>Listado de Pacientes</h2>
-  
-   
-    <table class="table-pacientes">
+  <h2>Listado de Pacientes</h2>
+
+  <table class="table-pacientes">
       <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Primer Apellido</th>
-          <th>Segundo Apellido</th>
-          <th>Edad</th>
-          <th>Género</th>
-          <th>Acciones</th>
-        </tr>
+          <tr>
+              <th>Nombre</th>
+              <th>Primer Apellido</th>
+              <th>Segundo Apellido</th>
+              <th>Edad</th>
+              <th>Género</th>
+              <th>Acciones</th>
+          </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let paciente of pacientes" (click)="verMas(paciente)">
-          <td>{{ paciente.nombre }}</td>
-          <td>{{ paciente.primerApellido }}</td>
-          <td>{{ paciente.segundoApellido }}</td>
-          <td>{{ paciente.edad }}</td>
-          <td>{{ paciente.genero }}</td>
-          <td>
-            <button class="btn-ver-mas" (click)="verMas(paciente)">Ver Más</button>
-          </td>
-        </tr>
+          <tr *ngFor="let paciente of pacientes" (click)="verMas(paciente)">
+              <td>{{ paciente.nombre }}</td>
+              <td>{{ paciente.primerApellido }}</td>
+              <td>{{ paciente.segundoApellido }}</td>
+              <td>{{ paciente.edad }}</td>
+              <td>{{ paciente.genero }}</td>
+              <td>
+                  <button class="btn-ver-mas" (click)="verMas(paciente)">Ver Más</button>
+              </td>
+          </tr>
       </tbody>
-    </table>
-  
+  </table>
 
-    <div *ngIf="pacienteSeleccionado" class="detalle-paciente">
+  <!-- Detalle del paciente seleccionado -->
+  <div *ngIf="pacienteSeleccionado" class="detalle-paciente">
       <h3>Detalles del Paciente</h3>
       <p><strong>Nombre:</strong> {{ pacienteSeleccionado.nombre }}</p>
       <p><strong>Primer Apellido:</strong> {{ pacienteSeleccionado.primerApellido }}</p>
@@ -49,8 +46,6 @@
       <p><strong>Localidad:</strong> {{ pacienteSeleccionado.localidad }}</p>
       <p><strong>Provincia:</strong> {{ pacienteSeleccionado.provincia }}</p>
       <p><strong>Código Postal:</strong> {{ pacienteSeleccionado.codigoPostal }}</p>
-  
       <button (click)="cerrar()">Cerrar</button>
-    </div>
   </div>
-  
+</div>
